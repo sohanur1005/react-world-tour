@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
 import Country from "../Country/Country";
+import './Countries.css'
+
+
+
+
 
 
 const Countries = () => {
@@ -9,18 +14,19 @@ const Countries = () => {
       fetch("https://restcountries.com/v3.1/all?fields=name,flags,cca3")
       .then(res=> res.json())
       .then(data=>{
-        console.log(data);
+        
         setCountries(data)
       } );
 
   },[])
 
   return (
-    <div>
+    <div className="country-conatiner">
       <h3>Countries: {countries.length}</h3>
       {
-        countries.map(country => <Country country={country}></Country>)
+        countries.map(country=> <Country key={country.cca3} country={country}></Country>)
       }
+     
     </div>
   );
 };
