@@ -52,7 +52,7 @@ const Countries = () => {
         }
       </div>
 
-      {/* show countries */}
+      {/* show countries ......*/}
       <div 
       className="country-container">
         {
